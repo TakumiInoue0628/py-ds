@@ -1,0 +1,2 @@
+HP: https://www.gsi.go.jp/KOKUJYOHO/OLD-MENCHO-title.htm
+DATA: https://www.gsi.go.jp/KOKUJYOHO/MENCHO/backnumber/R1_R5_mencho.csv

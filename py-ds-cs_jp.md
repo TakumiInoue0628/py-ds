@@ -1,4 +1,4 @@
-# Python Data-science Cheat-sheet
+# Python Data-science Cheat-sheet [JP]
 
 ## 前処理
 
@@ -18,6 +18,21 @@ df_raw = pd.read_csv(data_path, encoding='utf-8')
 
 ### 加工
 
+#### 削除
+カラムの確認
+```python
+### Check columns
+df_raw.columns
+```
+削除
+```python
+### Set unnecessary columns
+drop_columns = ['都道府県', '市区町村']
+
+### Drop unnecessary columns
+df = df_raw.drop(columns=drop_columns)
+```
+
 #### データ型変換
 データ型の確認
 ```python
@@ -27,7 +42,7 @@ df_raw.info()
 データ型の変換
 ```python
 ### Set the numeric columns
-numeric_columns = df_1.iloc[:, 3:].columns
+numeric_columns = ['地域コード', '都道府県', '市区町村']
 
 ### Copy data-frame
 df = df_raw.copy()
@@ -35,6 +50,22 @@ df = df_raw.copy()
 ### Convert object to numeric(float64)
 df[numeric_columns] = df[numeric_columns].astype(np.float64)
 ```
+
+#### 結合
+```python
+### Merge the data-frames
+df = pd.merge(df1, df2, on='地域コード')
+
+### Check the data frame
+df.info()
+```
+<details>
+<summary>パラメータ</summary>
+
+* `on`：結合のキーとなる列のカラム名
+
+</details>
+
 #### ダミー変数化
 #### 標準化
 #### 主成分分析
